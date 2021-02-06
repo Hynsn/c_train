@@ -1,4 +1,5 @@
-﻿
+﻿#include "var.h"
+
 int g_a;
 char g_x;
 

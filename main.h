@@ -7,7 +7,7 @@
 
 #define BASE_USE                1
 
-#define RESURION_TEST           1
+#define RESURION_TEST           0
 
 #define STR2HEX_CONVERT_TEST    0
 
@@ -17,11 +17,14 @@
 
 #define MULTICAST_CONFIG_TEST   0
 
+#define SEARCH_DIF_AB           1
+
 #define LEXIN_GOLDBACH          0
 
+#define SCREW_MATRIX            0
+
 #if BASE_USE
-    void comma_use();
-    void strlen_sizeof();
+    void base_test();
 #endif
 
 #if RESURION_TEST
@@ -42,16 +45,17 @@
     void func_point_use2();
 #endif
 
-#if STRLEN_SIZEOF
-    void strlen_sizeof();
-#endif
-
 #if MULTICAST_CONFIG_TEST
     void multicast_config_test();
 #endif
-
+#if SEARCH_DIF_AB
+    void search_difab_test();
+#endif
 #if LEXIN_GOLDBACH
     void lexin_goldbach_test();
+#endif
+#if SCREW_MATRIX
+    void screw_matrix_test();
 #endif
 
 #endif //C_TRAIN_MAIN_H
