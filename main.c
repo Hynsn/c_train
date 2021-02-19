@@ -7,8 +7,9 @@ int main() {
 #if BASE_USE
     base_test();
 #endif
-#if STR2HEX_CONVERT_TEST
+#if UTILS_TEST
     str2hex_convert_test();
+    void swap123_test();
 #endif
 #if RESURION_TEST
     recursion_test();
@@ -16,9 +17,6 @@ int main() {
 #if UNION_STRUCT_USE
     union_strict_use1();
     union_strict_use2();
-#endif
-#if STRLEN_SIZEOF
-    strlen_sizeof();
 #endif
 #if FUNC_POINT
     func_point_use1();

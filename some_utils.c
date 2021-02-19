@@ -67,3 +67,44 @@ void str2hex_convert_test() {
 	}
 	else printf("\nconvert failed .");
 }
+
+void swap1(int * a,int * b) {
+    *a = *a + *b;
+    *b = *a - *b;
+    *a = *a - *b;
+}
+void swap2(int * a, int * b) {
+    *a = *a ^ *b;
+    *b = *a ^ *b;
+    *a = *a ^ *b;
+}
+void swap3(int *a, int *b) {
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+int system_mod() {
+    union {
+        int a;
+        char b;
+    } c;
+    c.a = 1;
+
+    return c.b;
+}
+
+void swap123_test() {
+    unsigned int a = 86, b = 46;
+    printf("a: %d, b: %d \n", a, b);
+    swap2(&a, &b);
+    printf("a: %d, b: %d \n", a, b);
+    swap1(&a, &b);
+    printf("a: %d, b: %d \n", a, b);
+    swap3(&a, &b);
+    printf("a: %d, b: %d \n", a,b);
+
+    printf("return 1 is little mod,0 is big mod :%d \n",system_mod());
+}
+

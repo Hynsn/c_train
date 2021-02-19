@@ -9,7 +9,7 @@
 
 #define RESURION_TEST           0
 
-#define STR2HEX_CONVERT_TEST    0
+#define UTILS_TEST              0
 
 #define UNION_STRUCT_USE        0
 
@@ -17,7 +17,7 @@
 
 #define MULTICAST_CONFIG_TEST   0
 
-#define SEARCH_DIF_AB           1
+#define SEARCH_DIF_AB           0
 
 #define LEXIN_GOLDBACH          0
 
@@ -31,8 +31,9 @@
     void recursion_test();
 #endif
 
-#if STR2HEX_CONVERT_TEST
-    void str2hex_convert_test();
+#if UTILS_TEST
+    str2hex_convert_test();
+    void swap123_test();
 #endif
 
 #if UNION_STRUCT_USE

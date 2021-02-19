@@ -52,33 +52,6 @@ int cum(int n) {
 	return idx[n && 1](n - 1) + n;
 }
 
-void swap1(int * a,int * b) {
-	*a = *a + *b;
-	*b = *a - *b;
-	*a = *a - *b;
-}
-void swap2(int * a, int * b) {
-	*a = *a ^ *b;
-	*b = *a ^ *b;
-	*a = *a ^ *b;
-}
-void swap3(int *a, int *b) {
-	int temp;
-	temp = *a;
-	*a = *b;
-	*b = temp;
-}
-
-int system_mod() {
-	union {
-		int a;
-		char b;
-	} c;
-	c.a = 1;
-
-	return c.b;
-}
-
 void sign_unsign_operation() {
     FUNC_START;
     unsigned int a = 6;
@@ -135,8 +108,6 @@ void comma_use(){
 
     printf("c=%d \n", c);
     printf("d=%d \n", d);
-
-    printf("return 1 is little mod,0 is big mod :%d \n",system_mod());
 }
 
 /* i++ , ++j ,
@@ -190,17 +161,6 @@ void operation_priority(){
     printf("min %d \n", min);
 }
 
-void swap123_test() {
-	unsigned int a = 86, b = 46;
-	printf("a: %d, b: %d \n", a, b);
-	swap2(&a, &b);
-	printf("a: %d, b: %d \n", a, b);
-	swap1(&a, &b);
-    printf("a: %d, b: %d \n", a, b);
-    swap3(&a, &b);
-    printf("a: %d, b: %d \n", a,b);
-}
-
 void foo(int b[][3])
 {
 	++b;
@@ -224,7 +184,6 @@ void rank2_point(){
 
 
 void base_test(){
-    /*swap123_test();
     arry_point_diff();
     static_test();
     static_test();
@@ -236,5 +195,5 @@ void base_test(){
     bit_operation();
     define_add_operator();
     strlen_sizeof();
-    str_shift_test();*/
+    str_shift_test();
 }

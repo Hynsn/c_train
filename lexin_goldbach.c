@@ -30,6 +30,7 @@ bool chkEvenNumIsOk(long a) {
 
 #define GOLDBACH_SIZE     360
 
+// 任一大于4的偶数可以分解为两个素数
 void lexin_goldbach_test(){
     time_t t;
     struct tm * lt;
