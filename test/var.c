@@ -1,9 +1,12 @@
-﻿#include "var.h"
+﻿#include "./var.h"
+#include <stdio.h>
 
-int g_a;
-char g_x;
+// 定义一次
+int g_a = 0;
+char g_x = 0;
 
 void f() {
-	g_a = 1;
+    printf("extern_f \n");
+    g_a = 1;
 	g_x = 'x';
 }

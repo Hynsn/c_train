@@ -1,3 +1,10 @@
-﻿
-int  g_a;//使用extern在头文件中声明全局变量
-char g_x;
+﻿#ifndef VAR_H
+#define VAR_H
+
+// extern 声明一次，避免duplicate definitions
+extern int  g_a;
+extern char g_x;
+// extern 修饰函数可省略
+void f();
+
+#endif

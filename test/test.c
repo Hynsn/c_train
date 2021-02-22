@@ -1,13 +1,10 @@
-﻿#include <stdio.h>
-#include "var.h"
-
-int g_a;
-char g_x;
-void f();
+﻿#include "./var.h"
+#include <stdio.h>
 
 int extern_use() {
 	f();
     g_a = 1;
     g_x = 'x';
-	return 0;
+    printf("extern_use \n");
+    return 0;
 }
