@@ -13,6 +13,11 @@ char * get_data() {
 	return d; // 返回字符串常量的地址，虽然d是栈上定义的，它指向的是字符串常量的地址，不会被释放
 }
 
+void stack_point_test(){
+    /* 指向栈的指针 */
+    printf("get_data %s ,p: %p \n", get_data(),get_data());
+}
+
 void right_shift_n(const char* src,char* dec,int n) {
 	int len = strlen(src);
 	int i;
@@ -38,18 +43,6 @@ void static_test() {
 	i++;
 
 	printf("static i: %d \n", i);
-}
-
-/* 大佬写的代码，看不懂 */
-typedef int(*fun)(int);
-
-int stp(int n) { return 0; }
-
-int cum(int n) {
-	fun idx[2];
-	idx[1] = cum;
-	idx[0] = stp;
-	return idx[n && 1](n - 1) + n;
 }
 
 void sign_unsign_operation() {
@@ -93,13 +86,11 @@ void strlen_sizeof() {
     printf("test strlen :%d sizeof(test) :%d sizeof(_test) :%d\n",strlen(test),sizeof(test), sizeof(_test));
     // [6]声明字符串strlen取决于长度，sizeof取决于[]分配的大小，如使用memset的时候注意两个函数的区别
     printf("__test strlen :%d sizeof(test) :%d\n", strlen(__test), sizeof(__test));
-
-    /* 指向栈的指针 */
-    printf("get_data %s ,p: %p \n", get_data(),get_data());
 }
 
+// i++ , ++j ,#define MIN
 // 逗号表达式
-void comma_use(){
+void comma_define_add_operator(){
     int a, b, c, d;
     a = 3;
     b = 5;
@@ -108,19 +99,11 @@ void comma_use(){
 
     printf("c=%d \n", c);
     printf("d=%d \n", d);
-}
 
-/* i++ , ++j ,
- * #define MIN
- * cum(5) 求累加和
- * */
-void define_add_operator(){
     int i = 0, j = 0;
     printf("i++: %d\n", i++);
     printf("++j: %d\n", ++j);
     printf("MIN(4,5): %d\n", MIN(4,5));
-
-    printf("kkk : %d\n", cum(5));// 1+2+3+4+5
 }
 
 /* malloc use */
@@ -188,12 +171,12 @@ void base_test(){
     static_test();
     static_test();
     malloc_use();
-    comma_use();
+    comma_define_add_operator();
+    stack_point_test();
     rank2_point();
     sign_unsign_operation();
     operation_priority();
     bit_operation();
-    define_add_operator();
     strlen_sizeof();
     str_shift_test();
 }

@@ -27,6 +27,23 @@ void han_move(int n,char a,char b,char c) {
     }
 }
 
+/*
+求1+2+3+ ... +n, 要求不能使用乘除法 for while if else switch case等关键字及条件判断语句(A ? B : C).
+大佬写的代码，可以参考
+ https://bbs.csdn.net/topics/390773378
+ https://blog.csdn.net/sinat_27612639/article/details/51891102
+ */
+typedef int(*fun)(int);
+
+int stp(int n) { return 0; }
+
+int cum(int n) {
+    fun idx[2];
+    idx[1] = cum;
+    idx[0] = stp;
+    return idx[n && 1](n - 1) + n;
+}
+
 void recursion_test(){
     printf("strlen: %d\n", strlen_my("")); // 一行代码实现strlen
     printf("fbnac(1): %d\n", fbnac_my(1));
@@ -34,5 +51,7 @@ void recursion_test(){
     printf("fbnac(5): %d\n", fbnac_my(5)); // 斐波那契数列 1 1 2 3 5
 
     han_move(4,'a','b','c');
+
+    printf("cum : %d\n", cum(5));// 1+2+3+4+5
 }
 
